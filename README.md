@@ -1,6 +1,6 @@
 # ironhack-week1-notes
 
-# Commands for VSCODE
+## Commands for VSCODE
 **To open a file on Mac:**
 `cmd + p`
 
