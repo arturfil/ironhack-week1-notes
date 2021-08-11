@@ -7,9 +7,10 @@ let startWarsCharacters = [
   "GRRRRRRR",
 ];
 
-startWarsCharacters.forEach((name) => {
-  console.log(name);
-});
+// for each recap
+// startWarsCharacters.forEach((name) => {
+//   console.log(name);
+// });
 
 // startWarsCharacters.forEach(function(character) {
 //   console.log(character);
@@ -21,9 +22,10 @@ const result = startWarsCharacters.filter(
 );
 // console.log(result);
 
-startWarsCharacters.map((name, i) =>
-  console.log(name.toLowerCase() + ` is in index ${i}`)
-);
+// simple map
+// startWarsCharacters.map((name, i) =>
+//   console.log(name.toLowerCase() + ` is in index ${i}`)
+// );
 
 const f1Drivers = [
   {
@@ -56,7 +58,7 @@ const f1Drivers = [
   {
     name: "Matter",
     team: "Cuchow Team",
-    experice: 2,
+    experience: 2,
     setTires: [
       'rusty'
     ]
@@ -86,7 +88,7 @@ const redbullDrivers = [];
 f1Drivers.map(function (driver) {
   return driver.team === "RedBull" ? redbullDrivers.push(driver) : null;
 });
-console.log(redbullDrivers);
+// console.log(redbullDrivers);
 
 // the same as above
 const filteredDrivers = [];
@@ -100,19 +102,26 @@ f1Drivers.map((driver) =>
 const filtered = f1Drivers.filter((player) => {
   return player.team === "Cuchow Team";
 });
-console.log(filtered);
+// console.log(filtered);
 
-// let totalYearsOfExperienceCombined = f1Drivers.reduce(
-//   (accumulated, driver) => accumulated + driver.experice,0
-// );
+// const totalYears = pilots.reduce((acc, pilot) => acc + pilot.years, 0);
 
-// console.log(totalYearsOfExperienceCombined); // 38;
+// reduce
+const totalYearsOfExperienceCombined = f1Drivers.reduce(function(acc, driver) {
+  return acc + driver.experience;
+}, 0)
+console.log(totalYearsOfExperienceCombined); // 38;
 
+// same way but with ES6 syntax
+const totalYearsOfExperienceCombined2 = f1Drivers.reduce((acc, driver) => acc + driver.experience, 0)
+console.log(totalYearsOfExperienceCombined2); // 38;
+
+// iterate through array objects that have an array
 for(let i = 0; i < f1Drivers.length; i++) {
   // console.log( f1Drivers[i].setTires );
 
   for (let j = 0; j < f1Drivers[i].setTires.length; j++) {
-    console.log(`${f1Drivers[i].name} has tire: ${f1Drivers[i].setTires[j]}`);
+    // console.log(`${f1Drivers[i].name} has tire: ${f1Drivers[i].setTires[j]}`);
   }
 
 }
