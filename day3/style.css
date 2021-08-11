@@ -1,0 +1,92 @@
+/* tables, display */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Varela Round';
+}
+
+.defaultFont {
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.varelaFont {
+  font-family: 'Varela Round';
+}
+
+.lobsterFont {
+  font-family: 'Lobster', cursive;
+}
+
+.navbar {
+  background-color: white;
+  border-bottom: solid lightgrey 1px;
+}
+
+.navbar ul {
+  margin: 20px;
+}
+
+.navbar li {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 10px 20px 0 0;
+  display: inline-block;
+  list-style: none;
+}
+
+.container {
+  border-radius: 4px;
+  margin: 40px 120px;
+  width:600px;
+  height:190px;
+  border: 1px solid lightgrey;
+  padding-top:20px;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+/* inner divs */
+.container div {
+  color: #15eb4a;
+  /* color: rgb(21, 235, 74); */
+  border-radius: 4px;
+}
+
+#st-box {
+  float:left;
+  width:180px;
+  height:160px;
+  background-color:white;
+  border:solid black;
+}
+
+#st-box h2 {
+  text-align: center;
+}
+
+#nd-box {
+  float:left;
+  width:180px;
+  height:160px;
+  background-color:white; 
+  border:solid black;
+  margin-left:20px;
+}
+
+#nd-box h2  {
+  text-align: center;
+}
+
+#rd-box {
+  float:right;
+  width:180px;
+  height:160px;
+  background-color:white;
+  border:solid black;
+}
+
+#rd-box {
+  text-align: center;
+}
