@@ -1,3 +1,5 @@
+const {alvin} = require('./objectExport');
+
 // normal function
 function evenOrOdd(number) {
   if (number % 2 === 0) {
@@ -70,3 +72,27 @@ const anotherFilterWIthMap = foodItems.map((food) => {
 })
 // testing map functions 
 // console.log(foodNames);
+
+let nums = [2,6,7,3,8,22,11]; // 2,6,3,7,8,11,22; [][]
+
+// sort algorithm wth o^2 time complexity
+for(let i = 0; i < nums.length; i++) {
+  let temp = 0;
+  console.log(`This is round ${i}`);
+  for(let j = 0; j < nums.length-1; j++) {
+    if (nums[j] > nums[j+1] ) {
+      temp = nums[j];
+      nums[j] = nums[j+1];
+      nums[j+1] = temp;
+    }
+    console.log(nums[j])
+  }
+}
+
+// console.log(nums) // check modified array
+
+// see objectExport.js file to see how to import, also refer to the top import;
+console.log(alvin.name);
+
+
+
