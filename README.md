@@ -61,3 +61,9 @@
 
 **Switch from file to folder explorer Windows**
 `ctrl + shift + e`
+
+**Find and replace on Mac**
+`cmd + f, cmd + f & h`
+
+**Find and replace on Windows**
+`ctrl + f, ctrl + f & h`

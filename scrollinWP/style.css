@@ -5,11 +5,11 @@ body {
 }
 
 * {
-  box-sizing: border-box; /* https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing || keeps the element inside the parent border */
+  box-sizing: border-box;
 }
 
 ul {
-  list-style: none;
+  list-style-type: none;
 }
 
 a {
@@ -22,8 +22,8 @@ img {
 
 .main {
   width: 100%;
-  height: 100vh; /* refers to view height */ /* https://developer.mozilla.org/en-US/docs/Web/CSS/length */
-  /* background-image: url('./images/isometric_1.jpg'); */
+  height: 100vh;
+  /* background-image: url('./images/isometric_2.jpg'); */
   background-size: cover;
   background-position: top left;
   position: relative;
@@ -41,11 +41,11 @@ nav {
   padding: 10px 30px;
   background-color: #fff;
   box-shadow: 2px 2px 20px rgba(90, 118, 253, 0.13);
-  z-index: 1; /* order on the 'layer' of presentation https://developer.mozilla.org/en-US/docs/Web/CSS/z-index */
+  z-index: 1;
   width: 100%;
   position: fixed;
   left: 0px;
-  top: 0px
+  top: 0px;
 }
 
 nav ul {
@@ -56,11 +56,11 @@ nav ul {
 
 nav ul li a {
   height: 40px;
-  line-height: 43px;
+  line-height: 43px; /* TODO: check if it doesn't break when done */
   margin: 8px;
-  padding: 0px 22px;
+  padding: 0 22px;
   display: flex;
-  font-size: 0.9rem; /* could use pixels, relative to parents font size https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units */
+  font-size: 0.9rem;
   text-transform: uppercase;
   font-weight: 400;
   color: #111;
@@ -68,20 +68,21 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #5a76fd;
-  color: #fff;
+  /* background-color: #5a76fd; */
+  background-color: rgb(91, 118, 240);
+  color: #ffffff;
   box-shadow: 5px 10px 30px rgba(90, 118, 253, 0.5);
-  transition: all ease 0.2s; /* explain */
+  transition: ease-in 0.3s;
 }
 
 .home-content {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: absolute; /* https://developer.mozilla.org/en-US/docs/Web/CSS/position */
+  position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%); /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform */
+  transform: translate(-50%, -50%);
   width: 90%;
 }
 
@@ -107,29 +108,29 @@ nav ul li a:hover {
   font-size: 3.5rem;
   line-height: 55px;
   color: #22252e;
-  letter-spacing: 700;
+  letter-spacing: 2px;
   margin: 0px;
 }
 
 .home-text p {
   font-size: 1rem;
-  color: #777474;
+  color: #777477;
 }
 
 .main-login {
-  width: 120px;
+  width: 180px;
   height: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #5a76fd;
-  color: #fff;
-  box-shadow: 5px 10px 30px rgba(90, 118, 253, 0.5); /* https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow */
+  color: #ffffff;
+  box-shadow: 5px 10px 30px rgba(90, 118, 253, 0.5);
 }
 
 .main-login:hover {
-  background-color: #5a76fd;
-  transition: all ease;
+  background-color: #5ac9fd;
+  transition: ease-in 0.3s;
 }
 
 .timing {
@@ -147,13 +148,13 @@ nav ul li a:hover {
 
 .office-time,
 .office-number {
-  margin: 0px 20px
+  margin: 0px 20px;
 }
 
-.office-time h3, 
+.office-time h3,
 .office-number h3 {
   font-weight: 700;
-  color: #fff;
+  color: #ffffff;
   font-size: 1.6rem;
   margin: 0px;
 }
@@ -164,68 +165,21 @@ nav ul li a:hover {
   font-size: 1.1rem;
 }
 
-/* how to draw an arrow with absolute position */
-/* show hot it only the stick is drawn */
-.arrow {
-  align-self: end;
-  width: 50%;
-  border-right: 1px solid black;
-  height: 20%;
-  margin-bottom: 4em;
-  position: absolute;
-  bottom: 5px;
-  right: 70px;
-  animation: arrow-animation ease 1.5s;
-}
-
-.arrow::after {
-   content: '';
-   position: absolute;
-   width: 0;
-   height: 0;
-   border-style: solid;
-  border-width: 11px 11px 0px 11px;
-  border-color: #000 transparent transparent transparent;
-  right: -0.7em;
-  bottom: -2px;
-}
-
-.scroll {
-  position: absolute;
-  bottom: 20px;
-  right: 55px;
-  font-weight: 600;
-}
-
-/* How to create animation on your own, sliding down */
-@keyframes arrow-animation {
-  0% {
-    bottom: 70px;
-    opacity: 0.2;
-  }
-  100% {
-    bottom: 5px;
-    opacity: 1;
-  }
-}
-
-.between {
-  height: 300px;
-  background-color: rgb(153, 163, 255);
-}
-
 .services {
-  border-top: 0.2px solid rgb(241, 241, 241); /* could add this border */
-  background-image: linear-gradient(45deg, rgb(214, 205, 253), rgb(226, 255, 248));
-  /* background-color: rgb(196, 180, 180); */
+  /* border-top: 0.2px solid rgb(241, 241, 241); */
+  background-image: linear-gradient(
+    45deg,
+    rgb(214, 205, 253),
+    rgb(226, 255, 248)
+  );
   background-size: cover;
   background-position: center;
   align-items: center;
   text-align: center;
 }
 
-.services-heading {
-  margin-top: 60px;
+.services-header {
+  padding-top: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -233,20 +187,18 @@ nav ul li a:hover {
   flex-direction: column;
 }
 
-.services-heading h2 {
+.services-header h2 {
   line-height: 55px;
   font-size: 2.2rem;
   color: #22252e;
   letter-spacing: 1px;
   font-weight: 700;
-  /* margin: 80px 0 0 0px; */
   margin: 0;
 }
 
-.services-heading p {
-  /* margin: 0 auto; */
+.services-header p {
   font-size: 1rem;
-  color: #777474;
+  color: #777477;
   width: 50%;
   text-align: center;
 }
@@ -267,11 +219,10 @@ nav ul li a:hover {
   width: 500px;
   height: 500px;
   text-align: center;
-  box-shadow: 2px 2px 20px rgba(90, 118, 253, 0.15);
+  box-shadow: 2px 2px 20px rgb(90, 118, 253, 0.15);
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 20px;
-  /* padding-bottom: 20px;  mention this */ 
   flex-grow: 1;
 }
 
@@ -289,8 +240,8 @@ nav ul li a:hover {
 
 .box p {
   font-size: 1rem;
-  color: #777474;
-  display: block; /* https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flow_Layout/Block_and_Inline_Layout_in_Normal_Flow */
+  color: #777477;
+  display: block;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -316,9 +267,9 @@ nav ul li a:hover {
 
 .box a:hover {
   background-color: #5a76fd;
-  color: #fff;
+  color: #ffffff;
   box-shadow: 5px 10px 30px rgba(90, 118, 253, 0.5);
-  transition: all ease 0.3s;
+  transition: ease-in 0.3s;
 }
 
 footer {
@@ -330,7 +281,8 @@ footer {
   border-top: 1px solid rgba(167, 167, 167, 0.2);
 }
 
-footer a, footer p {
+footer a,
+footer p {
   color: #5e5e5e;
 }
 
@@ -338,7 +290,7 @@ nav .menu-btn {
   display: none;
 }
 
-@media(max-width: 1100px) {
+@media (max-width: 1100px) {
   nav {
     justify-content: space-between;
     height: 65px;
@@ -349,7 +301,7 @@ nav .menu-btn {
     position: absolute;
     top: 65px;
     left: 0px;
-    background-color: #fff;
+    background-color: #ffffff;
     border-bottom: 4px solid #5a76fd;
     width: 100%;
   }
@@ -365,7 +317,6 @@ nav .menu-btn {
     align-items: center;
     margin: 0px;
     padding: 25px;
-    /* border: 1px solid rgba(38, 38, 38, 0.03); */
   }
 
   nav .menu-icon {
@@ -375,7 +326,7 @@ nav .menu-btn {
     position: relative;
     user-select: none;
   }
-  
+
   nav .menu-icon .nav-icon {
     background-color: #333333;
     display: block;
@@ -397,11 +348,11 @@ nav .menu-btn {
   }
 
   nav .menu-icon .nav-icon:before {
-    top: 5px
+    top: 5px;
   }
 
   nav .menu-icon .nav-icon:after {
-    top:-5px
+    top: -5px;
   }
 
   nav .menu-btn:checked ~ .menu-icon .nav-icon {
@@ -409,12 +360,12 @@ nav .menu-btn {
   }
 
   nav .menu-btn:checked ~ .menu-icon .nav-icon:before {
-    transform: rotate(-45deg);
+    transform: rotate(45deg);
     top: 0;
   }
-  
+
   nav .menu-btn:checked ~ .menu-icon .nav-icon:after {
-    transform: rotate( 45deg);
+    transform: rotate(-45deg);
     top: 0;
   }
 
@@ -422,15 +373,11 @@ nav .menu-btn {
     display: block;
   }
 
-  .home-img {
-    display: none;
-  }
-
-  .home.home-text {
+  .home .home-text {
     width: 100%;
     justify-content: center;
     align-items: center;
     display: flex;
   }
-
+  /* end media */
 }
