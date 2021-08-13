@@ -71,8 +71,8 @@ const orderByYear = (movies) => {
 }
 // console.log(orderByYear(movies)); // :Testing
 
-let m1 ={name: "Movie 1", year: 2020}
-let m2 ={name: "Movie 2", year: 2008};
+let m1 ={name: "Movie 1", year: 2020, title: "Blah"}
+let m2 ={name: "Movie 2", year: 2008, title: "Blah"};
 
 // creating our own compare function like the one in sort;
 // so you understand what the comparing function does
@@ -89,8 +89,28 @@ function compare(a, b) {
 // console.log( compare(m1, m2) ); // Testing
 
 // Iteration 6
-const orderAlphabetically = () => {
-
+// more efficient, push 20 random movies, then sorts
+const orderAlphabetically2 = (movies) => {
+  let newArr = [] 
+  for (let i = 0; i < 20; i++) {
+    newArr.push(movies[i].title)
+  }
+  let sorted = newArr.sort((a, b) => (a > b ? 1 : -1));
+  return sorted;
 }
+
+// sorts all the array then push
+const orderAlphabetically = (movies) => {
+  movies.sort((a, b) => (a.title > b.title ? 1 : -1));
+  let sorted = [] 
+  for (let i = 0; i < 20; i++) {
+    sorted.push(movies[i].title)
+  }
+  return sorted;
+}
+
+
+
+console.log(orderAlphabetically2(movies));
 
 
