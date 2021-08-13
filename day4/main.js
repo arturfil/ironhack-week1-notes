@@ -15,7 +15,7 @@ const evenOrOdd3 = (number) => {
   return result;
 };
 
-// one liner
+// one liner arrow function
 const evenOrOdd2 = (number) => (number % 2 === 0 ? "Even" : "Odd");
 
 // reduce
