@@ -89,16 +89,6 @@ function compare(a, b) {
 // console.log( compare(m1, m2) ); // Testing
 
 // Iteration 6
-// more efficient, push 20 random movies, then sorts
-const orderAlphabetically2 = (movies) => {
-  let newArr = [] 
-  for (let i = 0; i < 20; i++) {
-    newArr.push(movies[i].title)
-  }
-  let sorted = newArr.sort((a, b) => (a > b ? 1 : -1));
-  return sorted;
-}
-
 // sorts all the array then push
 const orderAlphabetically = (movies) => {
   movies.sort((a, b) => (a.title > b.title ? 1 : -1));
@@ -109,7 +99,15 @@ const orderAlphabetically = (movies) => {
   return sorted;
 }
 
-
+// could be more efficient, push 20 random movies, then sorts
+const orderAlphabetically2 = (movies) => {
+  let newArr = [] 
+  for (let i = 0; i < 20; i++) {
+    newArr.push(movies[i].title)
+  }
+  let sorted = newArr.sort((a, b) => (a > b ? 1 : -1));
+  return sorted;
+}
 
 console.log(orderAlphabetically2(movies));
 

@@ -1,22 +1,52 @@
-let darthVader = {
+const darthVader = {
   name: "Darth Vader",
   weapon: "Red Saber",
   revealTruth() {
     console.log(`I am ${this.name} and I am your FATHER...`);
   },
   attackDamage: 8,
-  attack() {
+  attack() { // function () { this.name will be Darth Vader } 
     console.log(
       `${this.name} has attached you with his ${this.weapon}, causing a ${this.attackDamage} points damage`
     );
   },
-  defend: () => {
+  defend: () => { // this.name will be undefined
     console.log(`${this.name} Said, I am your father`);
   },
 };
 
-darthVader.revealTruth();
-darthVader.defend();
+// darthVader.revealTruth();
+// darthVader.defend(); // refer to arrow this keyword !work
+
+let arturo = { 
+  id: 9, 
+  name: 'Arturo', 
+  age: 29,
+  type: 'staff'
+}
+
+class Person {
+  walk() {
+    console.log("walking")
+  }
+}
+
+// mold or blueprint of an object
+class IronHacker extends Person {
+  constructor(id, name, age, type) {
+    super();
+    this.id = id,
+    this.name = name,
+    this.age = age,
+    this.type = type
+  }
+}
+
+const andriw = new IronHacker(23423, "Andriw", 26, "student");
+const matias = new IronHacker(234234, "Matias", 28, "student")
+andriw.walk();
+console.log(andriw)
+console.log(matias)
 
 // classes and inheritance
 // Use basketball player if desired
@@ -27,12 +57,9 @@ class SoccerPlayer {
     this.country = country;
     this.position = position;
   }
-
   shoot() {
-    // let index = Math.random() * (endOfArray - begOfArray) + begOfArray; // works for any min, max
-    // let diceNum = Math.floor(Math.random() * 6) + 1; // only works with 1 to 6
     let diceNum = Math.floor(Math.random() * (6 - 1)) + 1; // only works with 1 to 6
-    if (this.name === 'Messi') {
+    if (this.name === 'Messi' || this.name === 'Ronaldo') {
       return diceNum > 1 ? "scored" : "didn't score"
     } else {
       return diceNum > 3 ? "scored" : "didn't score"; 
@@ -41,7 +68,7 @@ class SoccerPlayer {
 }
 
 const messi = new SoccerPlayer('Messi', 'PSG', 'Argentina', 'False 9 (Foward)');
-console.log( messi.shoot() );
+// console.log( messi.shoot() );
 
 // explain how the clue lab was a pain, refactor
 
@@ -50,7 +77,6 @@ class Bird {
     this.name = name;
     this.color = color;
   }
-
   fly() {
     console.log("This bird is flying");
   }
@@ -69,15 +95,14 @@ class Eagle extends Bird {
   hunt() {
     let rnd = Math.floor(Math.random() * (preys.length - 0)) + 0;
     console.log(`${this.name} got a ${preys[rnd]} for a meal`);
-  }
-
-  fly() {
-    console.log(`The eagle will fly at ${this.speed} mph`)
-  }
+  } 
 }
 
-const americanEagle = new Eagle("Eagyy Azalea", "Dark Brown", preys, "American Eagle", 255 );
+const americanEagle = new Eagle( preys, "American Eagle", 255, "Eagyy Azalea", "Dark Brown", );
+const deadEagle = new Eagle();
 
-console.log( americanEagle.name );
-americanEagle.hunt();
-americanEagle.fly();
+deadEagle.fly()
+// console.log(deadEagle.name);
+console.log( americanEagle );
+// americanEagle.hunt();
+// americanEagle.fly();
